@@ -27,7 +27,7 @@
 import Layout from "../components/common/Layout.vue"
 export default {
     components : {Layout},
-    data : ()=>{
+    data(){
 
         return {
             sidebars: [

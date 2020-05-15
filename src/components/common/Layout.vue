@@ -23,7 +23,7 @@
 <script>
 export default {
     name: "Layout",
-    data: ()=>{
+    data(){
         return {
             title : '축구정보 시스템',
             login : '로그인',

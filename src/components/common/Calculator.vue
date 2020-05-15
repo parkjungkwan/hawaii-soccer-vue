@@ -28,9 +28,53 @@
 </template>
 
 <script>
-    export default {
-        name: "Calculator"
+export default {
+data(){
+    return {
+        previous: null,
+        current: '',
+        operator: null,
+        operatorClicked: false
     }
+},
+methods:{
+    clear(){
+        this.current = ''
+    },
+    setPrevious(){
+        this.previous = this.current
+        this.operatorClicked = true
+    },
+    append(number){
+        if(this.operatorClicked){
+            this.current = ''
+            this.operatorClicked = false
+        }
+        this.current = `${this.current}${number}`
+    },
+    add(){
+        this.operator = (a, b) => a + b
+        this.setPrevious()
+    },
+    minus(){
+        this.operator = (a, b) => a - b
+        this.setPrevious()
+    },
+    times(){
+        this.operator = (a, b) => a * b
+        this.setPrevious()
+    },
+    divide(){
+        this.operator = (a, b) => a / b
+        this.setPrevious()
+    },
+    equal(){
+        this.current = `${this.operator(parseFloat(this.previous),
+                                        parseFloat(this.current))}`
+        this.previous = null
+    }
+}
+}
 </script>
 
 <style scoped>
