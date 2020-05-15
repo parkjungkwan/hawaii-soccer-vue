@@ -2,7 +2,7 @@
     <div id="app">
         <Layout>
             <template #header="self">
-                <h1 id="title">{{self.title}}</h1>
+                <router-link to="/"><h1 id="title">{{self.title}}</h1></router-link>
                 <router-link to="/join"><span id="join">{{self.join}}</span></router-link>
                 <router-link to="/login"><span id="login">{{self.login}}</span></router-link>
             </template>
@@ -28,6 +28,7 @@ import Layout from "../components/common/Layout.vue"
 export default {
     components : {Layout},
     data : ()=>{
+
         return {
             sidebars: [
                 {menu: '쓰기'},
@@ -38,6 +39,10 @@ export default {
             ]
 
         }
+    },
+    created () {
+        //can use Data(this.title, this.titleComputed ...), events(vm.$on, vm.$once, vm.$off, vm.$emit)
+        //don't use $el
     }
 }
 </script>

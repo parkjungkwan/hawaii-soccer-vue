@@ -14,7 +14,7 @@
             <label ><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" required>
 
-            <button @click="login" type="submit">Login</button>
+            <router-link to="/calculator"><button type="submit">Login</button></router-link>
             <label>
                 <input type="checkbox" checked="checked" name="remember"> Remember me
             </label>
@@ -30,12 +30,8 @@
 
 <script>
     export default {
-        name: "Login",
-        methods : {
-            login : ()=>{
-                alert('로그인 버튼 클릭 2')
-            }
-        }
+        name: "Login"
+
     }
 </script>
 
