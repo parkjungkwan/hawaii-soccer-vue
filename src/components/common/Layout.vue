@@ -10,7 +10,7 @@
             <slot name="sidebar"></slot>
         </aside>
         <section id="content">
-            <slot name="content" :content="content">
+            <slot name="content">
 
             </slot>
         </section>
@@ -28,7 +28,6 @@ export default {
             title : '축구정보 시스템',
             login : '로그인',
             join : '회원가입',
-            content : '축구 경기 일정 검색',
             footer : '(사)축구선수협회'
         }
     }
