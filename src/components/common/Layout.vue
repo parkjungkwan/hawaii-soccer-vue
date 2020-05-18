@@ -30,6 +30,9 @@ export default {
             join : '회원가입',
             footer : '(사)축구선수협회'
         }
+    },
+    methods: {
+
     }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
 <div>
-<h1>계산기</h1>
+<h1>Calculator</h1>
     <div class="calculator">
         <div class="display">{{current || '0'}}</div>
         <div @click="clear" class="btn">C</div>
@@ -31,10 +31,10 @@
 export default {
 data(){
     return {
-        previous: null,
-        current: '',
-        operator: null,
-        operatorClicked: false
+       previous : null,
+        current : '',
+        operator : null,
+        operatorClicked : false
     }
 },
 methods:{
@@ -53,7 +53,7 @@ methods:{
         this.current = `${this.current}${number}`
     },
     add(){
-        this.operator = (a, b) => a + b
+       this.operator = (a, b) => a + b
         this.setPrevious()
     },
     minus(){
@@ -69,9 +69,8 @@ methods:{
         this.setPrevious()
     },
     equal(){
-        this.current = `${this.operator(parseFloat(this.previous),
-                                        parseFloat(this.current))}`
-        this.previous = null
+        this.current = `${this.operator(parseFloat(this.previous),parseFloat(this.current))}`
+        this.previous=null
     }
 }
 }
