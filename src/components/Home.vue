@@ -37,7 +37,7 @@ export default {
                 {menu: '검색', link:'/search'},
                 {menu: '수정', link:'/update'},
                 {menu: '삭제', link:'/delete'},
-                {menu: '회원수', link:'/counter'}
+                {menu: '회원수', link:'/vuexCounter'}
             ]
 
         }

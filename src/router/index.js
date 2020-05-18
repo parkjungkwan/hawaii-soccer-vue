@@ -9,6 +9,7 @@ import Update from '../components/member/Update'
 import Delete from '../components/member/Delete'
 import Calculator from '../components/common/Calculator'
 import Counter from '../components/common/Counter'
+import VuexCounter from '../components/common/VuexCounter'
 Vue.use(Router)
 export default new Router({
     mode: 'history',
@@ -18,6 +19,7 @@ export default new Router({
         {path: '/login', component: Login},
         {path: '/calculator', component: Calculator},
         {path: '/counter', component: Counter},
+        {path: '/vuexCounter', component: VuexCounter},
         {path: '/register', component: Register},
         {path: '/list', component: List},
         {path: '/search', component: Search},
