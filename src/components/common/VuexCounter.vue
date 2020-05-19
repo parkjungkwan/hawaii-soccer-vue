@@ -7,12 +7,9 @@
         <br>
         <button @click="incrementIfOdd">홀수일때만 증가</button>
         <br>
-        <button @click="incrementIfOdd">홀수일때만 증가</button>
-        <br>
         <button @click="incrementAsync">1초마다 자동 증가</button>
         <br>
-        <button @click="deleteLog">로그 지우기</button>
-        <br>
+
         <div>
             <div>최근 5개 값의 로그: {{recentHistory}}</div>
         </div>

@@ -4,7 +4,7 @@
         <form method="post">
                <div class="container">
                 <label ></label>
-                <input type="text" v-model="userid" placeholder="Enter Username" name="userid" required>
+                <input type="text" v-model="userid"  placeholder="Enter Username" name="userid" required>
                 <h3>입력한 아이디 : {{userid}}</h3>
                 <label ><b>Password</b></label>
                 <input type="password" v-model="passwd" placeholder="Enter Password" name="password" required>
