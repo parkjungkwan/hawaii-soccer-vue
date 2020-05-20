@@ -47,6 +47,7 @@ export default {
     },
     methods: {
         login(){
+            alert(this.userid)
             this.$store.dispatch('player/login',{playerId: this.userid, backNo: this.passwd})
         },
         moveToPasswd(){

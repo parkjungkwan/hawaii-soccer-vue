@@ -28,13 +28,14 @@ const getters = {
 
 }
 const actions = {
-    async login({commit}){
-        const url = state.context + state.player.playerId + `/access`
+    async login({commit}, payload){
+        const url = state.context + `players/${payload.playerId}/access`
         const headers = {
+            authorization: 'JWT fefege..',
+            Accept : 'application/json',
             'Content-Type': 'application/json'
         }
-
-        axios.post(url, state.player, headers)
+        axios.post(url, payload, headers)
             .then(({data})=>{
                 alert('자바를 다녀옴')
                 commit('LOGIN_COMMIT', data)
