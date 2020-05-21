@@ -10,6 +10,7 @@ import Delete from '../components/member/Delete'
 import Calculator from '../components/common/Calculator'
 import Counter from '../components/common/Counter'
 import VuexCounter from '../components/common/VuexCounter'
+import MyPage from "../components/member/MyPage";
 Vue.use(Router)
 export default new Router({
     mode: 'history',
@@ -25,5 +26,6 @@ export default new Router({
         {path: '/search', component: Search},
         {path: '/update', component: Update},
         {path: '/delete', component: Delete},
+        {path: '/mypage', component: MyPage},
     ]
 })

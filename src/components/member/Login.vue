@@ -29,7 +29,7 @@
 </template>
 
 <script>
-    import {mapState} from 'vuex'
+import {mapState} from 'vuex'
 export default {
         computed : {
           ...mapState(
@@ -48,7 +48,7 @@ export default {
     methods: {
         login(){
             alert(this.userid)
-            this.$store.dispatch('player/login',{playerId: this.userid, backNo: this.passwd})
+            this.$store.dispatch('player/login',{playerId: '2000003', backNo: '40'})
         },
         moveToPasswd(){
             document.getElementById('passwd').focus()
