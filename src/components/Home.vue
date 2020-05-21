@@ -77,7 +77,6 @@ export default {
     },
     methods:{
         logout(){
-            alert('로그아웃 1')
             this.$store.dispatch('player/logout')
         },
         menu(i){
