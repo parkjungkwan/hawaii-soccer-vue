@@ -1,40 +1,44 @@
 <template>
     <div id="app">
-        <div v-if=true>
-        <Layout>
-            <template #header="self">
+        <div v-if=auth>
+            <Layout>
+                <template #header="self">
                     <router-link to="/"><h1 class="title">{{self.title}}</h1></router-link>
-                    <router-link to="/join"><span class="join">{{self.join}}</span></router-link>
-                    <router-link to="/login"><span class="login">{{self.login}}</span></router-link>
-            </template>
-            <template #sidebar>
-               <h3>광고판</h3>
-            </template>
-
-        </Layout>
+                    <router-link to="/mypage"><span class="join">{{self.mypage}}</span></router-link>
+                    <span @click="logout" class="login">{{self.logout}}</span>
+                </template>
+                <template #sidebar>
+                    <ul class="menu">
+                        <li v-for="i of sidebars" :key="i.menu">
+                            <router-link :to="i.link">{{i.menu}}</router-link>
+                            <!--<a @click="menu(i.menu)">{{i.menu}}</a>-->
+                        </li>
+                    </ul>
+                </template>
+                <template #content>
+                    <router-view/>
+                </template>
+                <template #footer="self" >
+                    <h3 id="footer">{{self.footer}}</h3>
+                </template>
+            </Layout>
         </div> <!-- v-if END -->
             <!--로그인 성공화면-->
-        <Layout>
+        <div v-else>
+            <Layout>
             <template #header="self">
                 <router-link to="/"><h1 class="title">{{self.title}}</h1></router-link>
-                <router-link to="/mypage"><span class="join">{{self.mypage}}</span></router-link>
-                <span @click="logout" class="login">{{self.logout}}</span>
+                <router-link to="/join"><span class="join">{{self.join}}</span></router-link>
+                <router-link to="/login"><span class="login">{{self.login}}</span></router-link>
             </template>
             <template #sidebar>
-                <ul class="menu">
-                    <li v-for="i of sidebars" :key="i.menu">
-                        <router-link :to="i.link">{{i.menu}}</router-link>
-                        <!--<a @click="menu(i.menu)">{{i.menu}}</a>-->
-                    </li>
-                </ul>
+                <h3>광고판</h3>
             </template>
             <template #content>
                 <router-view/>
             </template>
-            <template #footer="self" >
-                <h3 id="footer">{{self.footer}}</h3>
-            </template>
         </Layout>
+        </div>
     </div>
 </template>
 
