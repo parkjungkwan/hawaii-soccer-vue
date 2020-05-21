@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <div v-if="auth">
+        <div v-if=true>
         <Layout>
             <template #header="self">
                     <router-link to="/"><h1 class="title">{{self.title}}</h1></router-link>
@@ -73,7 +73,8 @@ export default {
     },
     methods:{
         logout(){
-            alert('로그아웃')
+            alert('로그아웃 1')
+            this.$store.dispatch('player/logout')
         },
         menu(i){
             switch (i) {

@@ -28,8 +28,9 @@ const actions = {
                 state.fail = true
             })
     },
-    async join({commit}){
-        commit('join')
+    async logout({commit}){
+        alert('로그아웃 2')
+        commit('LOGOUT_COMMIT')
     }
 }
 const mutations = {
@@ -50,8 +51,12 @@ const mutations = {
     FAIL_COMMIT(state){
         state.fail = true
     },
-    join(){
-        alert("회원가입")
+    LOGOUT_COMMIT(state){
+        alert('로그아웃 3')
+        localStorage.clear()
+        state.auth = false
+        state.player = {}
+
     }
 }
 const getters = {
