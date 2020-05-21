@@ -19,7 +19,7 @@ const actions = {
                 if(data.result){
                     commit('LOGIN_COMMIT', data)
                 }else{
-                    commit('fail_commit')
+                    commit('FAIL_COMMIT')
                 }
 
             })
@@ -46,6 +46,9 @@ const mutations = {
             /* 관리자 */
         }
 
+    },
+    FAIL_COMMIT(state){
+        state.fail = true
     },
     join(){
         alert("회원가입")

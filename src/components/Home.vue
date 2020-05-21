@@ -1,10 +1,24 @@
 <template>
     <div id="app">
+        <div v-if="auth">
         <Layout>
             <template #header="self">
-                <router-link to="/"><h1 id="title">{{self.title}}</h1></router-link>
-                <router-link to="/join"><span id="join">{{self.join}}</span></router-link>
-                <router-link to="/login"><span id="login">{{self.login}}</span></router-link>
+                    <router-link to="/"><h1 class="title">{{self.title}}</h1></router-link>
+                    <router-link to="/join"><span class="join">{{self.join}}</span></router-link>
+                    <router-link to="/login"><span class="login">{{self.login}}</span></router-link>
+            </template>
+            <template #sidebar>
+               <h3>광고판</h3>
+            </template>
+
+        </Layout>
+        </div> <!-- v-if END -->
+            <!--로그인 성공화면-->
+        <Layout>
+            <template #header="self">
+                <router-link to="/"><h1 class="title">{{self.title}}</h1></router-link>
+                <router-link to="/mypage"><span class="join">{{self.mypage}}</span></router-link>
+                <span @click="logout" class="login">{{self.logout}}</span>
             </template>
             <template #sidebar>
                 <ul class="menu">
@@ -26,8 +40,17 @@
 
 <script>
 import Layout from "../components/common/Layout.vue"
+import {mapState} from "vuex";
 export default {
     components : {Layout},
+    computed : {
+        ...mapState(
+            {
+                auth : state => state.player.auth
+            }
+
+        )
+    },
     data(){
 
         return {
@@ -43,11 +66,15 @@ export default {
         }
 
     },
+
     created () {
         //can use Data(this.title, this.titleComputed ...), events(vm.$on, vm.$once, vm.$off, vm.$emit)
         //don't use $el
     },
     methods:{
+        logout(){
+            alert('로그아웃')
+        },
         menu(i){
             switch (i) {
                 case '쓰기':
@@ -80,8 +107,8 @@ export default {
         list-style: none;
         font-style: italic;
     }
-    #title{width: 300px;margin: 0 auto}
-    #login{margin-right: 50px; float: right}
-    #join{margin-right: 50px; float: right}
-    #footer{width: 300px; margin: 0 auto}
+    .title{width: 300px;margin: 0 auto}
+    .login{margin-right: 50px; float: right}
+    .join{margin-right: 50px; float: right}
+    .footer{width: 300px; margin: 0 auto}
 </style>
